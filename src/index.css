@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-urdu: "Noto Nastaliq Urdu", serif;
+  --font-hindi: "Noto Sans Devanagari", sans-serif;
+
+  --color-med-bg: #F8FAFC;
+  --color-med-primary: #0EA5E9;
+  --color-med-success: #10B981;
+  --color-med-warning: #F59E0B;
+  --color-med-danger: #EF4444;
+  --color-med-text-primary: #1E293B;
+  --color-med-text-secondary: #64748B;
+  --color-med-border: #E2E8F0;
+  --color-med-input-border: #CBD5E1;
+  --color-med-ui-bg: #F1F5F9;
+}
+
+@layer base {
+  body {
+    @apply bg-med-bg text-med-text-primary font-inter antialiased overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+.urdu-text {
+  font-family: var(--font-urdu);
+  line-height: 2.2 !important;
+}
+
+.hindi-text {
+  font-family: var(--font-hindi);
+}
+
+.glass-morphism {
+  @apply bg-white/70 backdrop-blur-xl border border-white/20;
+}
+
+.shadow-premium {
+  box-shadow: 0 20px 50px -12px rgba(15, 23, 42, 0.08);
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.5; }
+  50% { transform: scale(1); opacity: 0.3; }
+  100% { transform: scale(0.95); opacity: 0.5; }
+}
+
+.pulse-loading {
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-med-border rounded-full;
+}
+
